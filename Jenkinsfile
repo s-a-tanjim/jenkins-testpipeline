@@ -11,21 +11,27 @@ pipeline {
   stages {
     stage('Stage 1') {
       steps {
-        echo 'Hello world!'
-        echo $TEST_ENV
-        pwd
+        sh '''
+          echo 'Hello world!'
+          echo $TEST_ENV
+          pwd
+        '''
       }
     }
     stage('Test') {
       steps {
-        echo 'Testing..'
-        pwd
+        sh '''
+          echo 'Testing..'
+          pwd
+        '''
       }
     }
     stage('Deploy') {
       steps {
-        echo 'Deploying....'
-        pwd
+        sh '''
+          echo 'Deploying....'
+          pwd
+        '''
       }
     }
   }
